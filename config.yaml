@@ -1,0 +1,56 @@
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+credentials:
+  usernames:
+    adameve:
+      email: gauravaher44@gmail.com
+      first_name: Adam
+      last_name: Eve
+      logged_in: false
+      password: $2b$12$/DuR4CyoIgqpW.Rmff95/eMRT.lWG7qoZrh9qjgFbtRbJD0oYHw76
+      password_hint: name
+      roles: null
+    eveadam:
+      email: adam@gmail.com
+      first_name: Eve
+      last_name: Adam
+      logged_in: false
+      password: $2b$12$8yC9wjF9jr4iokhuP.VcRuVRCJ3ZUI3tSB3gQU6lq1Jy6zLHgMf0i
+      password_hint: name
+      roles: null
+    gaurav191:
+      email: melsby@gmail.com
+      failed_login_attempts: 0
+      first_name: Gaurav
+      last_name: Aher
+      logged_in: false
+      password: $2b$12$wEecx8uOlKYhRd5ifCNPxefCvQmnGN2u1wZp8Ono.VbjlNhPwS5VO
+      password_hint: name
+      roles: null
+    jsmith:
+      email: jsmith@gmail.com
+      failed_login_attempts: 0
+      logged_in: false
+      name: John Smith
+      password: $2b$12$qgpdymNsKCf9Hjwg.NSXiO9/ItCdKVNoJBWQf6EAk9n73HgkAJmEC
+      role: admin
+    rb1202:
+      email: rishibedmutha330@gmail.com
+      failed_login_attempts: 0
+      first_name: Rushi
+      last_name: Bedmutha
+      logged_in: false
+      password: $2b$12$5n8NrDE6KgEQy.sbope12eMIUTqhjsXm0TIrHjF0iVh/zjv5BZ3xK
+      password_hint: name
+      roles: null
+    rbriggs:
+      email: rbriggs@gmail.com
+      failed_login_attempts: 0
+      logged_in: false
+      name: Rebecca Briggs
+      password: $2b$12$uON60sh.2IdIk4cka2YILuRo4kQai.pU8McK/owmmJ.QawK85GrdK
+      role: user
+pre-authorized:
+  emails: []
