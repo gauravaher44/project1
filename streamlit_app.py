@@ -15,7 +15,7 @@ if 'authentication_status' not in ss:
 
 
 MenuButtons(get_roles())
-st.header('Home page')
+# st.header('Home page')
 # Title section with style
 st.markdown("""
 <div style="text-align: center; font-size: 48px; font-weight: bold; color: #8E44AD;">
