@@ -46,6 +46,42 @@ with login_tab:
         authenticator.logout(location='main')    
         st.write(f'Welcome *{ss["name"]}*')
 
+        user_name = "Melody Maestro"
+        join_date = "2024-12-10"
+        
+        # 🎉 Welcome Message
+        st.title(f"👋 Welcome back, {user_name}!")
+        st.markdown("You are logged in to **RaagaSense** – your personalized Indian classical music companion.")
+        
+        # Show account info in a nice container
+        with st.container():
+            st.markdown("### 📋 Account Information")
+            st.markdown(f"**Username:** `{user_name}`")
+            st.markdown(f"**Member Since:** `{join_date}`")
+            st.markdown(f"**Last Login:** `{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}`")
+        
+            st.success("✨ You have full access to the Raga Identification System.")
+        
+        # Add a music-themed call to action
+        st.markdown("---")
+        st.markdown("### 🎶 What would you like to do next?")
+        
+        action = st.radio("Choose an action:", ["🎙️ Identify a Raaga", "📊 View Past Predictions", "⚙️ Manage Account Settings"])
+        
+        if action == "🎙️ Identify a Raaga":
+            st.info("Go to the Prediction Page and upload or record your Raaga.")
+        elif action == "📊 View Past Predictions":
+            st.warning("🔍 This feature is coming soon! Stay tuned.")
+        elif action == "⚙️ Manage Account Settings":
+            st.warning("⚙️ Settings are not editable in this demo.")
+        
+        # Optional: Add logout button
+        st.markdown("---")
+        if st.button("🚪 Logout"):
+            st.success("You have been logged out.")
+            # Add your logout logic here (session clearing or redirect)
+            
+
     elif ss["authentication_status"] is False:
         st.error('Username/password is incorrect')
     elif ss["authentication_status"] is None:
