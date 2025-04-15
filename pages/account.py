@@ -46,7 +46,7 @@ with login_tab:
 
     if ss["authentication_status"]:
         authenticator.logout(location='main')    
-        st.write(f'Welcome *{ss["name"]}*')
+        # st.write(f'Welcome *{ss["name"]}*')
 
         user_name = "Melody Maestro"
         join_date = "2024-12-10"
