@@ -26,6 +26,8 @@ from tensorflow.keras.models import load_model
 
 import streamlit_authenticator as stauth
 
+import io
+
 from st_audiorec import st_audiorec
 
 # If the user reloads or refreshes the page while still logged in,
@@ -165,26 +167,45 @@ st.write("[Learn more>](https://google.com)")
 audio_bytes = st_audiorec()
 
 # Playback and save
-if audio_bytes:
-    # st.audio(audio_bytes, format="audio/wav")
-    with open("recorded_audio.wav", "wb") as f:
-        f.write(audio_bytes)
-    st.success("Audio saved as 'recorded_audio.wav'")
-    file =r'F:\BE Project\recorded_audio.wav'
-    x,sr1 = librosa.load(file)
-    ipd.Audio(x,rate=sr1)
 
-    prediction_feature = extract_features(x,sr1)
-    prediction_feature = prediction_feature.reshape(1,-1)
+# if audio_bytes:
+#     # st.audio(audio_bytes, format="audio/wav")
+#     with open("recorded_audio.wav", "wb") as f:
+#         f.write(audio_bytes)
+#     st.success("Audio saved as 'recorded_audio.wav'")
+#     file =r'F:\BE Project\recorded_audio.wav'
+#     x,sr1 = librosa.load(file)
+#     ipd.Audio(x,rate=sr1)
+
+#     prediction_feature = extract_features(x,sr1)
+#     prediction_feature = prediction_feature.reshape(1,-1)
+#     predicted_probabilities = model.predict(prediction_feature)
+#     predicted_class_label = np.argmax(predicted_probabilities)
+#     predicted_class_label = np.array([predicted_class_label])
+#     prediction_class = label_encoder.inverse_transform(predicted_class_label)
+#     print("Predicted class:", prediction_class[0]) 
+    
+#     st.write(prediction_class[0])  
+
+
+
+
+if audio_bytes:
+    st.audio(audio_bytes, format="audio/wav")
+
+    # Load the recorded audio from bytes (in-memory)
+    y, sr = librosa.load(io.BytesIO(audio_bytes), sr=None)
+
+    # Extract features and predict
+    prediction_feature = extract_features(y, sr)
+    prediction_feature = prediction_feature.reshape(1, -1)
+
     predicted_probabilities = model.predict(prediction_feature)
     predicted_class_label = np.argmax(predicted_probabilities)
     predicted_class_label = np.array([predicted_class_label])
     prediction_class = label_encoder.inverse_transform(predicted_class_label)
-    print("Predicted class:", prediction_class[0]) 
-    
-    st.write(prediction_class[0])  
 
-
+    st.success(f"🎶 Predicted Raga: {prediction_class[0]}")
 st.header('Page 2')
 
 st.write('This page is accessible by all users including the admins.')
