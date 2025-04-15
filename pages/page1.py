@@ -12,6 +12,6 @@ if 'authentication_status' not in ss:
     st.switch_page('./pages/account.py')
 
 MenuButtons(get_roles())
-st.header('Page 1')
+st.header('Page 2')
 
 st.write('This page is only accessible by the admin.')
