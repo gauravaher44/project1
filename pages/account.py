@@ -52,7 +52,7 @@ with login_tab:
         join_date = "2024-12-10"
         
         # 🎉 Welcome Message
-        st.title(f"👋 Welcome back, {name}!")
+        st.title(f"👋 Welcome back, {ss["name"]}!")
         st.markdown("You are logged in to **RaagaSense** – your personalized Indian classical music companion.")
         
         # Show account info in a nice container
