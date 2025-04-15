@@ -53,7 +53,7 @@ with login_tab:
         
         # 🎉 Welcome Message
         st.title(f"👋 Welcome back, {ss["name"]}!")
-        st.markdown("You are logged in to **RaagaSense** – your personalized Indian classical music companion.")
+        st.markdown("You are logged in to **KK Wagh** – your personalized Indian classical music companion.")
         
         # Show account info in a nice container
   
