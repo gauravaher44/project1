@@ -48,7 +48,7 @@ with login_tab:
         authenticator.logout(location='main')    
         # st.write(f'Welcome *{ss["name"]}*')
 
-        user_name = "Melody Maestro"
+        name = ss["name"]
         join_date = "2024-12-10"
         
         # 🎉 Welcome Message
