@@ -18,7 +18,7 @@ MenuButtons(get_roles())
 
 # Protected content in home page.
 if ss.authentication_status:
-    st.write('This content is only accessible for logged in users.')
+    # st.write('This content is only accessible for logged in users.')
     
     # Title and intro
     st.title("🎶 Raga Identification System")
