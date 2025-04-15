@@ -35,14 +35,8 @@ if ss.authentication_status:
     # Add a nice music-related image or GIF link if you have one
     st.image("https://media.giphy.com/media/3ohs4BSacFKI7A717y/giphy.gif", caption="Feel the melody!")
     
-    # Call to action buttons
-    st.markdown("### What would you like to do?")
-    
-    # Session state to track what the user wants to do
-    # App title with emoji
-    st.title("🎶 Welcome to RaagaSense 🎶")
-    st.subheader("Discover the soul of Indian classical music")
-    
+    # Call to action buttons    
+    # Session state to track what the user wants to d
     # A brief animated intro using a status message
     with st.spinner("Tuning the tanpura... 🎶"):
         time.sleep(2)
