@@ -77,6 +77,28 @@ with login_tab:
         if st.button("🚪 Logout"):
             st.success("You have been logged out.")
             # Add your logout logic here (session clearing or redirect)
+        # Horizontal divider
+        st.markdown("--- 🎶 ---")
+        
+        # Simple interactive "fun fact" button
+        if st.button("🎤 Give me a music fact!"):
+            st.info("🎧 Did you know? The ancient Vedic chants are considered one of the earliest forms of Indian classical music!")
+        
+        # Option to navigate (or placeholder for future links)
+        st.markdown("""
+        ### 🌟 What would you like to do next?
+        - 🎙️ [Make a new Raaga Prediction](#)
+        - 🎶 [Explore Popular Ragas](#)
+        - 🎨 [Customize Your Profile](#)
+        """)
+        
+        # Footer
+        st.markdown("""
+        <div style="text-align: center; font-size: 14px; color: gray;">
+        Keep the music alive, {username}! 🎵  
+        Made with ❤️ by RaagaSense Team
+        </div>
+        """.replace("{username}", username.capitalize()), unsafe_allow_html=True)
             
 
     elif ss["authentication_status"] is False:
