@@ -35,27 +35,45 @@ if ss.authentication_status:
     
     # Call to action buttons
     st.markdown("### What would you like to do?")
-    col2 = st.columns(1)
     
     # Session state to track what the user wants to do
-    if "action" not in st.session_state:
-        st.session_state.action = None
-    with col2:
-        if st.button("📂 Upload Audio File"):
-            st.session_state.action = "upload"
+    # App title with emoji
+    st.title("🎶 Welcome to RaagaSense 🎶")
+    st.subheader("Discover the soul of Indian classical music")
     
-    # Show selected content dynamically
-    if st.session_state.action == "record":
-        st.markdown("## 🎙️ Record Your Audio")
-        st.write("👉 [Add your recording functionality here!]")
+    # A brief animated intro using a status message
+    with st.spinner("Tuning the tanpura... 🎶"):
+        time.sleep(2)
     
-    elif st.session_state.action == "upload":
-        st.markdown("## 📂 Upload Audio File")
-        uploaded_file = st.file_uploader("Choose an audio file", type=["wav", "mp3"])
-        if uploaded_file:
-            st.audio(uploaded_file, format="audio/wav")
-            st.success("🎶 Audio uploaded successfully — ready for prediction!")
-            st.write("👉 [Call your prediction function here!]")
+    # Markdown for styled text and description
+    st.markdown("""
+    <div style="text-align: justify; font-size: 17px;">
+    Indian classical music is a universe of melodies called <b>Ragas</b>.  
+    Each Raga evokes unique emotions, moods, and spiritual experiences.  
+    🎧 Our AI-powered system listens, understands, and tells you the Raaga hidden in your music clip.  
+    Just record or upload your tune and let RaagaSense decode the melody magic!
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Fun music-themed horizontal divider
+    st.markdown("--- 🎼 ---")
+    
+    # A music emoji button (looks interactive)
+    if st.button("🎙️ Start Identifying Raaga"):
+        st.success("Head over to the prediction page to begin!")
+    
+    # Some inspirational music quote
+    st.markdown("""
+    > *"The music in the soul can be heard by the universe."*  
+    > — Lao Tzu
+    """)
+    
+    # Footer with credit
+    st.markdown("""
+    <div style="text-align: center; color: gray; font-size: 14px;">
+    Made with ❤️ for music lovers by RaagaSense Team 🎵
+    </div>
+    """, unsafe_allow_html=True)
     
     # Footer
     st.markdown("---")
