@@ -210,7 +210,7 @@ if audio_bytes:
     print("Predicted class:", prediction_class[0]) 
     
     # st.write(prediction_class[0])  
-    predicted_raga = predicted_class[0]
+    predicted_raga = prediction_class[0]
     st.success(f"🎵 Predicted Raga: **{predicted_raga}**")
 
 st.write('This page is accessible by all users including the admins.')
