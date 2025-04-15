@@ -143,4 +143,5 @@ if ss.authentication_status:
     st.markdown("---")
     st.markdown("Made with ❤️ for Indian Classical Music Enthusiasts")
 else:
+    st.markdown("---")
     st.warning('Please log in on login page.')
