@@ -29,6 +29,9 @@ import streamlit_authenticator as stauth
 import io
 import tempfile
 
+from st_audiorec import st_audiorec
+
+
 
 # If the user reloads or refreshes the page while still logged in,
 # go to the account page to restore the login status. Note reloading
