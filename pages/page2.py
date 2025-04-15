@@ -188,10 +188,7 @@ audio_bytes = st_audiorec()
 #     st.write(prediction_class[0])  
 
 
-
-
-
-audio_bytes = st_audiorec()
+audio_bytes = st_audiorec(key="audio_recorder")
 
 if audio_bytes:
     st.success("Audio received!")
@@ -207,5 +204,7 @@ if audio_bytes:
     prediction_class = label_encoder.inverse_transform(predicted_class_label)
 
     st.write(f"🎵 **Predicted Raga:** {prediction_class[0]}")
+
+
 
 st.write('This page is accessible by all users including the admins.')
