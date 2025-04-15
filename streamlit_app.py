@@ -19,9 +19,7 @@ st.header('Home page')
 if ss.authentication_status:
     st.write('This content is only accessible for logged in users.')
     
-    # Page Configuration
-    st.set_page_config(page_title="Raga Identification System 🎶", page_icon="🎵")
-    
+    # Page Configuration    
     # Title and intro
     st.title("🎶 Raga Identification System")
     st.subheader("Discover the Soul of Indian Classical Music")
