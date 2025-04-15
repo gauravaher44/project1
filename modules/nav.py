@@ -38,7 +38,7 @@ def MenuButtons(user_roles=None):
 
         # Show page 1 if the username that logged in is an admin.
         if ss.username in admins:
-            Page1Nav()
+            Page2Nav()
 
-        # (2) users with user and admin roles have access to page 2.
-        Page2Nav()     
+        # (2) users with user and admin roles have access to page 2. 
+        Page1Nav()
