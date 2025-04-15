@@ -27,6 +27,7 @@ from tensorflow.keras.models import load_model
 import streamlit_authenticator as stauth
 
 import io
+import tempfile
 
 from st_audiorec import st_audiorec
 
@@ -188,23 +189,25 @@ audio_bytes = st_audiorec()
 #     st.write(prediction_class[0])  
 
 
-audio_bytes = st_audiorec(key="audio_recorder")
 
+# Assuming 'audio_bytes' contains the audio data
 if audio_bytes:
-    st.success("Audio received!")
+    # Create a temporary file
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp_file:
+        tmp_file.write(audio_bytes)
+        tmp_file_path = tmp_file.name
 
-    # Load the audio bytes directly without saving to a file
-    y, sr1 = librosa.load(io.BytesIO(audio_bytes), sr=None)
+    # Load the audio file
+    y, sr = librosa.load(tmp_file_path, sr=None)
 
-    prediction_feature = extract_features(y, sr1)
-    prediction_feature = prediction_feature.reshape(1, -1)
-    predicted_probabilities = model.predict(prediction_feature)
-    predicted_class_label = np.argmax(predicted_probabilities)
-    predicted_class_label = np.array([predicted_class_label])
-    prediction_class = label_encoder.inverse_transform(predicted_class_label)
+    # Proceed with feature extraction and prediction
+    features = extract_features(y, sr)
+    features = features.reshape(1, -1)
+    predicted_probabilities = model.predict(features)
+    predicted_class_index = np.argmax(predicted_probabilities)
+    predicted_class = label_encoder.inverse_transform([predicted_class_index])
 
-    st.write(f"🎵 **Predicted Raga:** {prediction_class[0]}")
-
+    st.success(f"Predicted Raga: {predicted_class[0]}")
 
 
 st.write('This page is accessible by all users including the admins.')
