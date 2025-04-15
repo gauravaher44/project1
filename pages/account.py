@@ -1,4 +1,4 @@
-import streamlit as st
+koutimport streamlit as st
 from streamlit import session_state as ss
 import streamlit_authenticator as stauth
 import yaml
@@ -81,7 +81,7 @@ with login_tab:
         
         # Option to navigate (or placeholder for future links)
         st.markdown("""
-        ### 🌟 What would you like to do next?
+        ### 🌟 Checkout below features!
         - 🎙️ [Make a new Raaga Prediction](#)
         - 🎶 [Explore Popular Ragas](#)
         - 🎨 [Customize Your Profile](#)
