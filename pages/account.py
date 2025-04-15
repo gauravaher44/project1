@@ -52,17 +52,12 @@ with login_tab:
         join_date = "2024-12-10"
         
         # 🎉 Welcome Message
-        st.title(f"👋 Welcome back, {user_name}!")
+        st.title(f"👋 Welcome back, {name}!")
         st.markdown("You are logged in to **RaagaSense** – your personalized Indian classical music companion.")
         
         # Show account info in a nice container
-        with st.container():
-            st.markdown("### 📋 Account Information")
-            st.markdown(f"**Username:** `{user_name}`")
-            st.markdown(f"**Member Since:** `{join_date}`")
-            st.markdown(f"**Last Login:** `{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}`")
-        
-            st.success("✨ You have now access to the Raga Identification System.")
+  
+        st.success("✨ You have now access to the Raga Identification System.")
         
         # Add a music-themed call to action
         st.markdown("---")
