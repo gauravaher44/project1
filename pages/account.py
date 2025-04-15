@@ -62,7 +62,7 @@ with login_tab:
             st.markdown(f"**Member Since:** `{join_date}`")
             st.markdown(f"**Last Login:** `{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}`")
         
-            st.success("✨ You have full access to the Raga Identification System.")
+            st.success("✨ You have now access to the Raga Identification System.")
         
         # Add a music-themed call to action
         st.markdown("---")
