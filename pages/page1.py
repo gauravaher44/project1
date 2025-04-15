@@ -165,9 +165,11 @@ if file:
     predicted_class_label = np.argmax(predicted_probabilities)
     predicted_class_label = np.array([predicted_class_label])
     prediction_class = label_encoder.inverse_transform(predicted_class_label)
-    print("Predicted class:", prediction_class[0]) 
+    predicted_raga = prediction_class[0].capitalize()
+    st.success(f"🎵 Predicted Raga: **{predicted_raga}**")
+    # print("Predicted class:", prediction_class[0]) 
     
-#     st.write(prediction_class[0])   
+     
     
     # Start recording
 # audio_bytes = st_audiorec()
