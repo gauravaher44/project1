@@ -198,16 +198,18 @@ if audio_bytes:
         tmp_file_path = tmp_file.name
 
     # Load the audio file
-    y, sr = librosa.load(tmp_file_path, sr=None)
+    x,sr1 = librosa.load(tmp_file_path)
+    ipd.Audio(x,rate=sr1)
 
-    # Proceed with feature extraction and prediction
-    features = extract_features(y, sr)
-    features = features.reshape(1, -1)
-    predicted_probabilities = model.predict(features)
-    predicted_class_index = np.argmax(predicted_probabilities)
-    predicted_class = label_encoder.inverse_transform([predicted_class_index])
-
-    st.success(f"Predicted Raga: {predicted_class[0]}")
+    prediction_feature = extract_features(x,sr1)
+    prediction_feature = prediction_feature.reshape(1,-1)
+    predicted_probabilities = model.predict(prediction_feature)
+    predicted_class_label = np.argmax(predicted_probabilities)
+    predicted_class_label = np.array([predicted_class_label])
+    prediction_class = label_encoder.inverse_transform(predicted_class_label)
+    print("Predicted class:", prediction_class[0]) 
+    
+    st.write(prediction_class[0])  
 
 
 st.write('This page is accessible by all users including the admins.')
