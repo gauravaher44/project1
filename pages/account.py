@@ -98,7 +98,7 @@ with login_tab:
         Keep the music alive, {username}! 🎵  
         Made with ❤️ by RaagaSense Team
         </div>
-        """.replace("{ss["name"]}", name.capitalize()), unsafe_allow_html=True)
+        """.replace("{name}", name.capitalize()), unsafe_allow_html=True)
             
 
     elif ss["authentication_status"] is False:
