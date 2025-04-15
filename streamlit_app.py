@@ -15,75 +15,6 @@ if 'authentication_status' not in ss:
 
 
 MenuButtons(get_roles())
-# st.header('Home page')
-# Title section with style
-st.markdown("""
-<div style="text-align: center; font-size: 48px; font-weight: bold; color: #8E44AD;">
-🎶 Welcome to KK Wagh 🎶
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<div style="text-align: center; font-size: 20px; color: #555;">
-Discover the magic of Indian Classical Music — Identify ragas from your own recordings!
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown("---")
-
-# Date and time
-now = datetime.now().strftime("%A, %d %B %Y | %I:%M %p")
-st.markdown(f"<p style='text-align: center; color: gray;'>🗓️ {now}</p>", unsafe_allow_html=True)
-
-# Animated Emoji Line
-st.markdown("<h3 style='text-align: center;'>🎧 🎶 🎼 🎵 🥁 🎻 🎤</h3>", unsafe_allow_html=True)
-
-# Fun Random Fact Button
-if st.button("🎙️ Give me a Raaga Fun Fact!"):
-    facts = [
-        "🎶 Raga Yaman is often played in the evening and conveys a mood of devotion and tranquility.",
-        "🎵 There are more than 500 ragas in Indian Classical Music!",
-        "🎧 Raga Bhairavi is one of the most versatile ragas — it’s often used to conclude a concert.",
-        "🎶 The earliest treatise on Indian music, the 'Natya Shastra', was written over 2000 years ago.",
-        "🎼 Raga Desh is known to evoke feelings of patriotism and joy.",
-    ]
-    st.success(random.choice(facts))
-
-# Audio Teasers (optional - replace these URLs with your own audio samples)
-st.subheader("🎶 Listen to some Iconic Ragas")
-ragas = {
-    "Yaman": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-    "Bhairavi": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-    "Desh": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
-}
-
-for raga, url in ragas.items():
-    st.markdown(f"**🎵 {raga}**")
-    st.audio(url)
-
-# Quote of the day
-st.markdown("""
-<div style="text-align: center; font-size: 20px; color: #333; margin-top: 20px; padding: 10px; border-left: 4px solid #8E44AD;">
-🎶 "Music is the divine way to tell beautiful, poetic things to the heart." – Pablo Casals
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown("---")
-
-# Navigation hints (could connect these to pages later)
-st.markdown("""
-### 🎛️ Explore:
-- 🎙️ [Record your Raaga](#)
-- 📚 [Learn about Raagas](#)
-- 🎶 [Your Audio Predictions](#)
-""")
-
-# Footer
-st.markdown("""
-<div style="text-align: center; font-size: 14px; color: gray; margin-top: 40px;">
-Made with ❤️ for Indian Classical Music 🎶 | © 2025 KK Wagh
-</div>
-""", unsafe_allow_html=True)
 
 # Protected content in home page.
 if ss.authentication_status:
@@ -143,5 +74,74 @@ if ss.authentication_status:
     st.markdown("---")
     st.markdown("Made with ❤️ for Indian Classical Music Enthusiasts")
 else:
+    # st.header('Home page')
+    # Title section with style
+    st.markdown("""
+    <div style="text-align: center; font-size: 48px; font-weight: bold; color: #8E44AD;">
+    🎶 Welcome to KK Wagh 🎶
+    </div>
+    """, unsafe_allow_html=True)
+    
+    st.markdown("""
+    <div style="text-align: center; font-size: 20px; color: #555;">
+    Discover the magic of Indian Classical Music — Identify ragas from your own recordings!
+    </div>
+    """, unsafe_allow_html=True)
+    
+    st.markdown("---")
+    
+    # Date and time
+    now = datetime.now().strftime("%A, %d %B %Y | %I:%M %p")
+    st.markdown(f"<p style='text-align: center; color: gray;'>🗓️ {now}</p>", unsafe_allow_html=True)
+    
+    # Animated Emoji Line
+    st.markdown("<h3 style='text-align: center;'>🎧 🎶 🎼 🎵 🥁 🎻 🎤</h3>", unsafe_allow_html=True)
+    
+    # Fun Random Fact Button
+    if st.button("🎙️ Give me a Raaga Fun Fact!"):
+        facts = [
+            "🎶 Raga Yaman is often played in the evening and conveys a mood of devotion and tranquility.",
+            "🎵 There are more than 500 ragas in Indian Classical Music!",
+            "🎧 Raga Bhairavi is one of the most versatile ragas — it’s often used to conclude a concert.",
+            "🎶 The earliest treatise on Indian music, the 'Natya Shastra', was written over 2000 years ago.",
+            "🎼 Raga Desh is known to evoke feelings of patriotism and joy.",
+        ]
+        st.success(random.choice(facts))
+    
+    # Audio Teasers (optional - replace these URLs with your own audio samples)
+    st.subheader("🎶 Listen to some Iconic Ragas")
+    ragas = {
+        "Yaman": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        "Bhairavi": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+        "Desh": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+    }
+    
+    for raga, url in ragas.items():
+        st.markdown(f"**🎵 {raga}**")
+        st.audio(url)
+    
+    # Quote of the day
+    st.markdown("""
+    <div style="text-align: center; font-size: 20px; color: #333; margin-top: 20px; padding: 10px; border-left: 4px solid #8E44AD;">
+    🎶 "Music is the divine way to tell beautiful, poetic things to the heart." – Pablo Casals
+    </div>
+    """, unsafe_allow_html=True)
+    
+    st.markdown("---")
+    
+    # Navigation hints (could connect these to pages later)
+    st.markdown("""
+    ### 🎛️ Explore:
+    - 🎙️ [Record your Raaga](#)
+    - 📚 [Learn about Raagas](#)
+    - 🎶 [Your Audio Predictions](#)
+    """)
+    
+    # Footer
+    st.markdown("""
+    <div style="text-align: center; font-size: 14px; color: gray; margin-top: 40px;">
+    Made with ❤️ for Indian Classical Music 🎶 | © 2025 KK Wagh
+    </div>
+    """, unsafe_allow_html=True)
     st.markdown("---")
     st.warning('Please log in on login page.')
