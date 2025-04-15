@@ -89,9 +89,10 @@ with login_tab:
         
         # Footer
         st.markdown("""
+        <div><p></p></div>
         <div style="text-align: center; font-size: 14px; color: gray;">
-        Keep the music alive, {username}! 🎵  
-        Made with ❤️ by RaagaSense Team
+        Keep the music alive, {name}! 🎵  
+        Made with ❤️ by KK Wagh Team
         </div>
         """.replace("{name}", name.capitalize()), unsafe_allow_html=True)
             
