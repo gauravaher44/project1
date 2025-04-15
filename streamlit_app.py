@@ -67,7 +67,7 @@ if ss.authentication_status:
     # Footer with credit
     st.markdown("""
     <div style="text-align: center; color: gray; font-size: 14px;">
-    Made with ❤️ for music lovers by RaagaSense Team 🎵
+    Made with ❤️ for music lovers by KK Wagh Team 🎵
     </div>
     """, unsafe_allow_html=True)
     
