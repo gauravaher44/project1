@@ -43,7 +43,7 @@ if 'authentication_status' not in ss:
 MenuButtons(get_roles())
 # st.header('Page 2')
 
-st.write('This page is only accessible by the admin.')
+# st.write('This page is only accessible by the admin.')
 
 
 def load_audio(file_path):
