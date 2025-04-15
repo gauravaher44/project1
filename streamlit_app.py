@@ -19,7 +19,6 @@ st.header('Home page')
 if ss.authentication_status:
     st.write('This content is only accessible for logged in users.')
     
-    # Page Configuration    
     # Title and intro
     st.title("🎶 Raga Identification System")
     st.subheader("Discover the Soul of Indian Classical Music")
@@ -38,13 +37,30 @@ if ss.authentication_status:
     st.markdown("### What would you like to do?")
     col1, col2 = st.columns(2)
     
+    # Session state to track what the user wants to do
+    if "action" not in st.session_state:
+        st.session_state.action = None
+    
     with col1:
         if st.button("🎙️ Record Live Audio"):
-            st.switch_page("pages/page2.py")  # Change path to your recorder page
+            st.session_state.action = "record"
     
     with col2:
         if st.button("📂 Upload Audio File"):
-            st.switch_page("pages/upload_page.py")  # Add a dedicated upload page or section
+            st.session_state.action = "upload"
+    
+    # Show selected content dynamically
+    if st.session_state.action == "record":
+        st.markdown("## 🎙️ Record Your Audio")
+        st.write("👉 [Add your recording functionality here!]")
+    
+    elif st.session_state.action == "upload":
+        st.markdown("## 📂 Upload Audio File")
+        uploaded_file = st.file_uploader("Choose an audio file", type=["wav", "mp3"])
+        if uploaded_file:
+            st.audio(uploaded_file, format="audio/wav")
+            st.success("🎶 Audio uploaded successfully — ready for prediction!")
+            st.write("👉 [Call your prediction function here!]")
     
     # Footer
     st.markdown("---")
