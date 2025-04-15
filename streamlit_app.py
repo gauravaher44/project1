@@ -40,11 +40,6 @@ if ss.authentication_status:
     # Session state to track what the user wants to do
     if "action" not in st.session_state:
         st.session_state.action = None
-    
-    with col1:
-        if st.button("🎙️ Record Live Audio"):
-            st.session_state.action = "record"
-    
     with col2:
         if st.button("📂 Upload Audio File"):
             st.session_state.action = "upload"
