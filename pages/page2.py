@@ -209,7 +209,8 @@ if audio_bytes:
     prediction_class = label_encoder.inverse_transform(predicted_class_label)
     print("Predicted class:", prediction_class[0]) 
     
-    st.write(prediction_class[0])  
+    # st.write(prediction_class[0])  
+    st.success(f"🎵 Predicted Raga: **{predicted_raga[0]}**")
 
 
 st.write('This page is accessible by all users including the admins.')
