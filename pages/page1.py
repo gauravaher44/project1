@@ -153,24 +153,24 @@ st.write("[Learn more>](https://google.com)")
 # file =r'F:\BE Project\Dataset\mydataset4\asavari\asavari01.wav'
 # file =r'C:\Users\Dell\OneDrive\Desktop\bhoopali.dat.wav'
 
-# file=st.file_uploader("UPLOAD YOUR RAAGA AUDIO FOR PREDICTION",type=["mp3","wav"])
-# if file:
-#     st.audio(file,format="audio/mp3")
-#     x,sr1 = librosa.load(file)
-#     ipd.Audio(x,rate=sr1)
+file=st.file_uploader("UPLOAD YOUR RAAGA AUDIO FOR PREDICTION",type=["mp3","wav"])
+if file:
+    st.audio(file,format="audio/mp3")
+    x,sr1 = librosa.load(file)
+    ipd.Audio(x,rate=sr1)
 
-#     prediction_feature = extract_features(x,sr1)
-#     prediction_feature = prediction_feature.reshape(1,-1)
-#     predicted_probabilities = model.predict(prediction_feature)
-#     predicted_class_label = np.argmax(predicted_probabilities)
-#     predicted_class_label = np.array([predicted_class_label])
-#     prediction_class = label_encoder.inverse_transform(predicted_class_label)
-#     print("Predicted class:", prediction_class[0]) 
+    prediction_feature = extract_features(x,sr1)
+    prediction_feature = prediction_feature.reshape(1,-1)
+    predicted_probabilities = model.predict(prediction_feature)
+    predicted_class_label = np.argmax(predicted_probabilities)
+    predicted_class_label = np.array([predicted_class_label])
+    prediction_class = label_encoder.inverse_transform(predicted_class_label)
+    print("Predicted class:", prediction_class[0]) 
     
 #     st.write(prediction_class[0])   
     
     # Start recording
-audio_bytes = st_audiorec()
+# audio_bytes = st_audiorec()
 
 # Playback and save
 
@@ -196,24 +196,26 @@ audio_bytes = st_audiorec()
 
 
 # Assuming 'audio_bytes' contains the audio data
-if audio_bytes:
-    # Create a temporary file
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp_file:
-        tmp_file.write(audio_bytes)
-        tmp_file_path = tmp_file.name
 
-    # Load the audio file
-    x,sr1 = librosa.load(tmp_file_path)
-    ipd.Audio(x,rate=sr1)
 
-    prediction_feature = extract_features(x,sr1)
-    prediction_feature = prediction_feature.reshape(1,-1)
-    predicted_probabilities = model.predict(prediction_feature)
-    predicted_class_label = np.argmax(predicted_probabilities)
-    predicted_class_label = np.array([predicted_class_label])
-    prediction_class = label_encoder.inverse_transform(predicted_class_label)
-    print("Predicted class:", prediction_class[0]) 
+# if audio_bytes:
+#     # Create a temporary file
+#     with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp_file:
+#         tmp_file.write(audio_bytes)
+#         tmp_file_path = tmp_file.name
+
+#     # Load the audio file
+#     x,sr1 = librosa.load(tmp_file_path)
+#     ipd.Audio(x,rate=sr1)
+
+#     prediction_feature = extract_features(x,sr1)
+#     prediction_feature = prediction_feature.reshape(1,-1)
+#     predicted_probabilities = model.predict(prediction_feature)
+#     predicted_class_label = np.argmax(predicted_probabilities)
+#     predicted_class_label = np.array([predicted_class_label])
+#     prediction_class = label_encoder.inverse_transform(predicted_class_label)
+#     print("Predicted class:", prediction_class[0]) 
     
-    # st.write(prediction_class[0])  
-    predicted_raga = prediction_class[0].capitalize()
-    st.success(f"🎵 Predicted Raga: **{predicted_raga}**")
+#     # st.write(prediction_class[0])  
+#     predicted_raga = prediction_class[0].capitalize()
+#     st.success(f"🎵 Predicted Raga: **{predicted_raga}**")
