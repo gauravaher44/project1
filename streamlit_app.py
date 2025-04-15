@@ -47,7 +47,7 @@ if ss.authentication_status:
     Indian classical music is a universe of melodies called <b>Ragas</b>.  
     Each Raga evokes unique emotions, moods, and spiritual experiences.  
     🎧 Our AI-powered system listens, understands, and tells you the Raaga hidden in your music clip.  
-    Just record or upload your tune and let RaagaSense decode the melody magic!
+    Just record or upload your tune and let us decode the melody magic!
     </div>
     """, unsafe_allow_html=True)
     
