@@ -73,11 +73,6 @@ with login_tab:
             st.warning("⚙️ Settings are not editable in this demo.")
         
         # Optional: Add logout button
-        st.markdown("---")
-        if st.button("🚪 Logout"):
-            st.success("You have been logged out.")
-            # Add your logout logic here (session clearing or redirect)
-        # Horizontal divider
         st.markdown("--- 🎶 ---")
         
         # Simple interactive "fun fact" button
