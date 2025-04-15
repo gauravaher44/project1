@@ -190,22 +190,22 @@ audio_bytes = st_audiorec()
 
 
 
+
+audio_bytes = st_audiorec()
+
 if audio_bytes:
-    st.audio(audio_bytes, format="audio/wav")
+    st.success("Audio received!")
 
-    # Load the recorded audio from bytes (in-memory)
-    y, sr = librosa.load(io.BytesIO(audio_bytes), sr=None)
+    # Load the audio bytes directly without saving to a file
+    y, sr1 = librosa.load(io.BytesIO(audio_bytes), sr=None)
 
-    # Extract features and predict
-    prediction_feature = extract_features(y, sr)
+    prediction_feature = extract_features(y, sr1)
     prediction_feature = prediction_feature.reshape(1, -1)
-
     predicted_probabilities = model.predict(prediction_feature)
     predicted_class_label = np.argmax(predicted_probabilities)
     predicted_class_label = np.array([predicted_class_label])
     prediction_class = label_encoder.inverse_transform(predicted_class_label)
 
-    st.success(f"🎶 Predicted Raga: {prediction_class[0]}")
-st.header('Page 2')
+    st.write(f"🎵 **Predicted Raga:** {prediction_class[0]}")
 
 st.write('This page is accessible by all users including the admins.')
