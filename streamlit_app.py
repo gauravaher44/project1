@@ -35,7 +35,7 @@ if ss.authentication_status:
     
     # Call to action buttons
     st.markdown("### What would you like to do?")
-    col1, col2 = st.columns(2)
+    col2 = st.columns(1)
     
     # Session state to track what the user wants to do
     if "action" not in st.session_state:
