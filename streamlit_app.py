@@ -19,7 +19,7 @@ st.header('Home page')
 # Title section with style
 st.markdown("""
 <div style="text-align: center; font-size: 48px; font-weight: bold; color: #8E44AD;">
-🎶 Welcome to RaagaSense 🎶
+🎶 Welcome to KK Wagh 🎶
 </div>
 """, unsafe_allow_html=True)
 
@@ -81,7 +81,7 @@ st.markdown("""
 # Footer
 st.markdown("""
 <div style="text-align: center; font-size: 14px; color: gray; margin-top: 40px;">
-Made with ❤️ for Indian Classical Music 🎶 | © 2025 RaagaSense
+Made with ❤️ for Indian Classical Music 🎶 | © 2025 KK Wagh
 </div>
 """, unsafe_allow_html=True)
 
