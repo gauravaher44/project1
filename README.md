@@ -1,5 +1,4 @@
 # Sample Streamlit authenticator
-#https://raagidentification1.streamlit.app
 Authenticates users to use the multi-page [streamlit](https://streamlit.io/) app using [streamlit-authenticator library](https://github.com/mkhorasani/Streamlit-Authenticator). This sample app can survive page reloads courtesy from streamlit-authenticator library.
 
 ![image](https://github.com/fsmosca/sample-streamlit-authenticator/assets/22366935/727cf7af-555f-4f21-aeed-f8ddca8c28aa)
